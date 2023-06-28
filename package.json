@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "typescript": "^5.1.5"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.6.4",
+    "aws-sdk": "^2.1406.0",
+    "node-fetch": "2"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "watch": "rm -rf dist && tsc --watch"
+  }
+}

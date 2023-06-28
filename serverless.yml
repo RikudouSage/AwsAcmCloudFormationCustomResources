@@ -1,0 +1,24 @@
+service: AcmCustomResources
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  runtime: nodejs14.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Resource:
+            - '*'
+          Action:
+            - acm:*
+
+functions:
+  customResources:
+    handler: dist/handler.handle
+    timeout: 900
+
+package:
+  exclude:
+    - src/**/*
